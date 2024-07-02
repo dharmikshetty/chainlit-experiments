@@ -1,0 +1,383 @@
+Napoleon Bonaparte was a French military and political leader who rose to prominence during the French Revolution. He became Emperor of the French in 1804 and embarked on a series of military campaigns that reshaped Europe. Known for his strategic brilliance, he implemented various reforms and centralized power in France. Despite his military successes, his ambitions ultimately led to his downfall, as he faced defeat at the Battle of Waterloo in 1815. Napoleon's legacy includes significant legal, administrative, and educational reforms that had a lasting impact on European governance. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Document Control 
+ 
+S No 
+Title 
+Description 
+1 
+Document Name 
+TCL-GSMC-MYSQL-SOP 
+2 
+Author 
+Syed Adamshafi 
+3 
+Reviewed by 
+Mathiselvan Mathiyalagan 
+4 
+Approved by 
+Jayamurugan A 
+5 
+Release Date           
+19/07/2023 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+??Table of Contents 
+1. ?PURPOSE……………………………………………………….…………………………4 
+2. ?SCOPE………………………………………………………….………………………….4 
+3. ?INSTALLATION (Community Version) …...…………………………………………….4 
+?1.3.1 Download MySQL………………………...………………………………………....4 
+?1.3.2 Verify the MySQL packages. ……………………………………………………….5 
+?1.3.3 Uncompress the MySQL packages………………………………………………….5 
+?1.3.4 MySQL Installation………………………………………………………………….5 
+?1..3.5 Set the Data directory path for MySQL……………………………………………..6 
+?1.3.6 Start the MySQL Services……………………………………………………………6 
+?1.3.7 Verify MySQL Services are Up and Running………………………………………..6 
+?1.3.8 Login………………………………………………………………………………….6 
+?1.3.9 Instance Startup and Shutdown……………………………………………………….7 
+4. ?Enable the Slow logs query…………………………………………………………………7 
+?1.4.1 Enable Slow logs………………………………………………………………………7 
+?1.4.2 Configure Slow logs…………………………………………………………………..7 
+?1.4.3. Permission for Slow logs……………………………………………………………...8 
+5. ?Enable the Binary logs……………………………………………………………………….8 
+?1.5.1 Enable Binary logs……………………………………………………………………..8 
+?1..5.2 Configure Binary logs…………………………………………………………………8 
+?1.5.3 Permission for Binary logs……………………………………………………………..8 
+6. ?Purging the binary logs………………………………………………………………………9 
+?1.6.1 Binlog purging…………………………………………………………………………9 
+?1.6.2 Configure binlogs……………………………………………………………………..10 
+7. ?MySQL User Credential……...……………………………………………………………10 
+?1.7.1 User creation…………………………………………………………………………10 
+?1.7.2 Provide the Grants……………………………………………………………………10 
+?1.7.3 View the users and grants…………………………………………………………….10 
+?1.7.4 Reset the MySQL users……………………………………………………………….11 
+8. ?REFERENCES………………………………………………………………………………12 
+?? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1.1 PURPOSE 
+ 
+This document is designed to fine-tune the day-to-day operations carried out by the team and it describes the regularly recurring operations relevant to the quality of the investigation. In other words, it is authored keeping in mind the regularly occurring operations relevant to the quality of the investigation.  
+1.2 SCOPE 
+ 
+This is a technically oriented document, and it does not cover any business-related information or processes relevant for various customers. The procedures documented here can be applied based on applicability for different customers and should always be verified by the engineer before being followed. The author does not bear any responsibility for any loss of service being generated thereafter and the steps are expected to be used at the sole discretion of the engineer. 
+ 
+1.3 INSTALLATION 
+ 
+1. Download MySQL Community: Use the Below Link to download the MySQL packages as per OS recommended by the Customer. 
+ 
+Download link: https://downloads.mysql.com/archives/community/ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. Verify the MySQL packages: Use the Below Command to verify the MySQL packages. 
+ 
+$ dpkg --get-selections | grep mysql ------------------------------------- Ubuntu. 
+ 
+ 
+ 
+$ rpm -qa|grep mysql ------------------------------------------------------ Centos and Redhat. 
+ 
+ 
+ 
+ 
+1.3.3  Uncompress the MySQL Packages: Use the Below Command to Uncompress the MySQL. 
+ 
+$ tar -xvf  packagename.tar 
+ 
+ 
+ 
+1.3.4 MySQL Installation: Use the Below Command to Install the MySQL. 
+ 
+rpm -ivh “package name” ------ Centos and Redhat 
+dpkg -i “package name” --- Ubuntu 
+ 
+ 
+ 
+ 
+ 
+1.3.5 Set the Data directory path for MySQL: Use the Below Command to set the initial data dir path for MySQL. 
+ 
+$ cd /data 
+$ mkdir mysqldata 
+$ chown -R mysql:mysql /data/mysql 
+ 
+1.3.6 Start the MySQL services: Use the Below Command to start the MySQL services. 
+ 
+$ Service mysqld start  --------------- To start the MySQL services. --- For Redhat and Centos OS 
+$Service mysql start  --------------- To start the MySQL services. --- For Ubuntu 
+ 
+ 
+1.3.7 Verify MySQL services are Up and Running: Use the Below Command to status of MySQL services. 
+ 
+$ Service mysqld status  -------------To start the MySQL services. --- For Redhat and Centos OS 
+$Service mysql status  --------------- To start the MySQL services. --- For Ubuntu 
+ 
+ 
+ 
+ 
+ 
+1.3.8 Login: To login a MySQL instance provide the following command from shell prompt 
+$ mysql -uroot -p 
+ 
+ 
+ 
+1.3.8 Instance Startup & Shutdown: To check status,startup and shutdown a MySQL instance use: 
+ 
+a. service mysqld status 
+b. service mysqld start 
+c. service mysqld stop 
+1.4 Enable the Slow logs query 
+1.4.1 Enable Slow logs: To Enable the slow logs 
+ 
+Login to MySQL. 
+ 
+$Mysql -u”username” -p 
+Password: enter password 
+ 
+MySQL> show variables like ‘slow%’; 
+MySQL> show variables like ‘long%’; 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MySQL> set global slow_query_log_file= ‘file path.log’;  # to set the path of slow logs 
+MySQL>  set global slow_query_log=1 # To enable the Slow logs 
+MySQL> set global long_query_time=5 # defaults is 10. To set the Time for slow logs 
+ 
+1.4.2 Configure Slow logs: Configure the slow logs in My.cnf 
+ 
+Open the /etc/my.cnf 
+Under [mysqld] use the below commands. 
+[mysqld]   ---- Example 
+Slow_query_log=1 
+Slow_query_log_file=var/log/mysql-slow.log 
+Long_query_time=5 
+ 
+1.4.3 Permission for Slow logs: Provide the permission for slow logs using the below command. 
+ 
+# chown -R mysql:mysql var/log/mysql-slow.log 
+ 
+ 
+1.5 Enable the Binary logs 
+ 
+1.5.1 Enable Binary logs: To Enable the binary logs 
+ 
+Note: To Enable the Binary logs MySQL restart required. 
+ 
+Login to MySQL. 
+ 
+$Mysql -u”username” -p 
+Password: enter password 
+ 
+MySQL> show variables like ‘log_b%’; 
+ 
+ 
+1.5.2 Configure Binary logs: Configure the binary logs in My.cnf 
+ 
+Open the /etc/my.cnf 
+Under [mysqld] use the below commands. 
+[mysqld]   ---- Example 
+log_bin=/binlog/binlogs/DC_LMS 
+ 
+1.5.3 Permission for Slow logs: Provide the permission for slow logs using the below command. 
+ 
+# mkdir -p /binlog/binlogs/ 
+# chown -R mysql:mysql /binlog/binlogs/ 
+ 
+After doing the 1.5.2 and 1.5.3 steps Restart the MySQL services 
+ 
+ 
+ 
+1.6  
+1.6 Purging the Binary logs 
+Purging the Binary logs 
+1.6.1 Binlog purging: To Purge the binlogs. 
+ 
+To show which file are being used to store binary logs, use below command. 
+ 
+MySQL> show binary logs; 
+ 
+ 
+To delete old binary log, You can use “purge binary logs” Statement. 
+Note: Before Purging the Master DB Check the Slave status. 
+Login to Slave DB. 
+MySQL> Show Slave status\G 
+ 
+ 
+Example. For purging Binlogs 
+ 
+ 
+MySQL> Purge binary logs to ‘DC_LMS.024743’  -- This will removed what ever files are above the ‘DC_LMS.025364’   
+ 
+ 
+1.6.2 Configure Binlogs: Configure the binlogs in my.cnf 
+ 
+To configure the Binary logs in config. 
+[mysqld] 
+Expire_logs_days=7 # binary logs to expire after 7days. 
+Max_binlog_size=100M # To set the Binary logs size 
+ 
+1.7 MySQL user Credential 
+ 
+1.7.1 User Creation: create the user in MySQL prompt use below command. 
+ 
+MySQL> create user ‘username’@’localhost’ identified by ‘password’; user login through localhost 
+MySQL> create user ‘username’@’%’ identified by ‘password’; # user login through globaly 
+MySQL> create user ‘username’@’IP’ identified by ‘password’; #user login through IP. 
+ 
+1.7.2 Provide the Grants: Provide the grants. 
+ 
+MySQL> grant all privileges on *.* to ‘test’@’localhost’ 
+MySQL> grant all privileges on *.* to ‘test’@’%’ 
+MySQL> grant all privileges on *.* to ‘test’@’IP’ 
+ 
+Note: The first asterisk (*) will represent the database, and the second asterisk represents the table. 
+ 
+ 
+1.7.3 View the users and grants: To view the users and granst. 
+ 
+MySQL> select user,host from mysql.user;   ---- To list the users 
+MySQL> select user,host from mysql.user where user=’username’;   ---- To list the particular users 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MySQL> show grant for ‘test’@’localhost’ ; ----- To view the privileges details. 
+ 
+ 
+ 
+ 
+ 
+ 
+1.7.4 Reset the MySQL users: To Reset the MySQL user use below command. 
+ 
+MySQL> set password for ‘username’@’localhost’=password(‘enter password’);Before MySQL 8 version 
+ 
+MYSQL> alter user  ‘username’@’localhost’ identified by ‘enter password’; -After MySQL 8 version 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1.8 REFERENCES  
+ 
+1. https://dev.mysql.com/doc/refman/5.7/en/ 
+ 
+TATA Communications is committed to customer service & continuous improvement 
+

@@ -1,0 +1,12 @@
+extract features ( MobileNet ), update the associated indicators and reflect it on the dashboard  
+ 
+Effects of Fusion Techniques on Multi -Modal Dataset                               |Python , Keras , FER, HuggingFace, Scikit -Learn, Transformers  
+• Investigated the effects of 3 fusion techniques  viz, decision -level, feature -level, and hybrid on Facial Expression Recognition 
+models over multi -modal datasets (video, text, and audio) for emotion detection  
+• Experimented with ensembles of EK-GCN (uses external knowledge sentiment lexicons and POS) HateBERT ,, Vader, XLSR -
+emotion (Speech Emotion Detection), and EmoReact , HSEmotion ,  for feature extraction and emotion classification  
+ 
+RELEVANT TECHNICAL SKILLS  
+• Languages:  Python, SQL, R , Java, C, C++, JavaScript , PHP 
+• Libraries & Databases:  PyTorch, TensorFlow, NLTK, Scikit -Learn , Pandas , Numpy  
+• Tools & Platforms : Git, AWS, Tableau , Adobe Express, Power BI , BeautifulSoup , Selenium , Hadoop,  Excel, Latex

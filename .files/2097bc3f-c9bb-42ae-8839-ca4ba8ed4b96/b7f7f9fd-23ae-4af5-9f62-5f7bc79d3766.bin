@@ -1,0 +1,116 @@
+
+# coding: utf-8
+
+# In[ ]:
+
+
+import pyttsx3                            #this library sets up speech assistant
+import speech_recognition as sr           #for audio input
+import datetime                           # for accessing current date and time
+import wikipedia                           #accessing information
+
+
+
+engine=pyttsx3.init()
+
+def speak(audio):
+ engine.say(audio)
+ engine.runAndWait()
+
+def time_():                            #uses datetime library and the current time is setup
+    Time=datetime.datetime.now().strftime("%H:%M:%S")
+    speak("the current time is")
+    speak(Time)
+
+def date_():           #uses datetime library and current date is setup for output
+    day=datetime.datetime.now().day
+    month=datetime.datetime.now().month
+    year=datetime.datetime.now().year
+    speak("the date today is")
+    speak(day)
+    speak(month)
+    speak(year)
+    
+
+def wishme():                            # setting up wishes from gym assistant
+    speak(" hello how are you today, i am your gym assistant")
+    time_()
+    date_()
+
+    hour=datetime.datetime.now().hour
+
+    if hour>=5 and hour<12:
+        speak("gooooood morning its a fresh day to begin workout ")
+    elif hour>=12 and hour<19:
+        speak("its afternoon lets get active now")
+    elif hour>=19 and hour<24:
+        speak("good evening lets get the workout started and finish off the day")
+    else:
+        speak("goodnight for now but tommorow the work begins")
+
+    speak("i did my work here")
+
+
+
+        
+
+
+def TakeCommand():         #setting up the mic using pyttsx3 library
+    r=sr.Recognizer()
+    with sr.Microphone() as source:
+        print("listening...")
+        r.pause_threshold=1
+        audio=r.listen(source)
+
+
+    try:
+        print("recognizing.....")
+        query= r.recognize_google(audio,language="en-US")
+        print(query)
+
+    except Exception as e:
+        print(e)
+        print("say that again please...")
+        return "None"
+
+    return query
+
+    
+if __name__=="__main__":
+    
+
+    while True:
+        query= TakeCommand().lower()
+
+        if "time" in query:      #if time in audio input sets up the time function 
+            time_()
+        elif " assistant" in query:
+            wishme()
+        elif "date" in query:     #if date in audio input sets up date function
+            date_()
+        elif 'facts' in query:               #if facts in your audio input accesses the wikipedia library and displays information
+            speak("searching....")
+            query=query.replace("wikipedia",'')
+            result=wikipedia.summary(query,sentences=4)
+            speak("according to the gym assistant")
+            print(result)
+            speak(result)
+        elif 'workout' in query:              #if workout in audio input it searches using wikipedia displaying 4 lines of information
+            speak("searching....")
+            query=query.replace("wikipedia",'')
+            result=wikipedia.summary(query,sentences=4)
+            speak("according to the gym assistant")
+            print(result)
+            speak(result)
+    
+
+        elif 'quit' in query:                  #to quit from the assistant
+            speak("  bye     bye   ")
+            exit()
+
+
+# In[ ]:
+
+
+
+

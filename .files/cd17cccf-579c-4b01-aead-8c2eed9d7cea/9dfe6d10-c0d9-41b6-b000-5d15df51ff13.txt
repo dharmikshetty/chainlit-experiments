@@ -1,0 +1,14 @@
+with Bi -LSTM connected to parallel attention blocks) that branches out to Task Specific Layers to determine the aspect 
+categories and their sentiments for any given review  
+• Measured the informativeness score  using parameters like paper’s section coverage and aspects (Hedge score, POS features, 
+Sentiment, top keyword count) in the review  
+• Collated constructive nature (5 levels) of a peer -review and it’s politeness tones and examined the inter -layer dependency 
+between the two aspects based on the results obtained from the validation dataset  
+ 
+Sukkhi Fashion Jewellery                                 January 202 2 - April 202 2 
+Data Science Intern                    Mumbai  
+• Built a multi -modal model  using EfficientNet, CLIP , and GPT2  for keyword extraction & Jewelry Identification that enhanced 
+textual and image based search on the website  
+• Engineered software based on Apriori Algorithm  to recommend combo offers during festive sales, increasing cross -sales  and 
+customer retention  by 13% and 21%, respectively  
+• Wrote 15+ scripts  and ELT pipeline  to automate the data entries and integrated APIs, which in turn reflected in the company’s

@@ -1,0 +1,12 @@
+Analytics Dashboard  in real -time, speeding up quantitative analysis to address business growth and sales  
+ 
+RESEARCH AND  PROJECTS  
+PolitePEER: does peer review hurt? A dataset to gauge politeness intensity in the peer reviews                                   |LREC -2023  [IF 3.67]  
+• Published  an annotated dataset ( 2.5k annotated & 60k raw  peer -reviews ), with the annotation guidelines , scraped from 
+OpenReview and Publons, , encompassing 5 levels of politeness and benchmarked results with the baseline models  
+• Implemented RPoliteness library for feature extraction and politeness score predictor that helped in assessing crucial  insight  
+ 
+KnowStress : A Mobile Application Prototype for Detection of Stress and Stress Related Disorders                        | Scopus and WoS  
+• Curated our dataset (950+ responses)  on Indian living standards  targeting age 18 -30 years  abiding the HIPAA Privacy rule  
+• Proposed a Stress Screener model for our Generalized Stress Test (GST),  trained on Indian stress standards, with an accuracy 
+of 89% to diagnose patient’s stress  score  and likelihood of any stress -related disorders (PTSD, ADHD, Bipolar, and GAD)

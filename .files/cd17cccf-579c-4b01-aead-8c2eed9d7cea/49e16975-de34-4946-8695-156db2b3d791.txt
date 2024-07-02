@@ -1,0 +1,10 @@
+Anuvaad - A Hybrid Machine Translation Approach                           |NLP, GNMT, LLM, Spacy, POS tags and Dependency Tree  
+• Engineered a NER  model that outperformed Spacy(CoNLL & UNER benchmarks), particularly for compound proper nouns , 
+and integrated it with our translation module to address phrases requiring transliteration rather than direct translation  
+• Resolved Google Translate’s mistranslations  from English to Hindi (a grammatical gender language) by capturing appropriate 
+gender cues from the Gender -Specific words in the given text and correcting Gender -Sensitive words in Hindi  
+ 
+Relax Melodies - Sleep Monitoring and Analytics Platform                           |React, Native, Django, Web Sockets, QR Code, ChartJS  
+• Launched an application to monitor a  patient’s sleeping patterns and predict the REM  Sleep Score  using KPIs  like sleep 
+duration, snoring intensity, frequency of awakening, and restlessness (movement distribution charts) captured via webcam  
+• Engineered pipeline to streamline the client’s incoming snapshots, pre -process (Image Brightening & Colorization) snapshots,

@@ -1,0 +1,19 @@
+MEITH  HITESH  NAVLAKHA  
+ 
+Los Angeles  | meithnav@g .ucla.edu  | +1 310 806 3612  | linkedin.com/in/meith -navlakha  | github.com/meithnav  | Publications   
+  
+EDUCATION  
+University of California Los Angeles (UCLA), Los Angeles, CA                     September 2023 – June 2025  
+Master of Science in Computer Science               (CGPA: 3.85/4.0)  
+Relevant Courses: Natural Language Generation, Advanced Data Mining, Deep Generative AI           
+Dwarkadas J. Sanghvi College of Engineering, Mumbai, India                     August 2019 – May 2023  
+Bachelor of Technology in Computer Engineering with Distinction                    (CGPA: 3.9/4.0)  
+Relevant Courses: NLP, Computer Vision, Data Warehouse & Mining, Big Data Infrastructure , Web Intelligence  
+ 
+RESEARCH INTERESTS  
+LLMs, Natural Language Generation, Vision & Linguistics (multi -modal), Search and Recommendation  
+ 
+PROFESSIONAL EXPERIENCE  
+IIT Patna                                                April 2022  – May 2023  
+NLP Research Intern                   Remote  
+• Developed our novel  multi -task model  with 6 ablation variants , comprising a shared layer (SciBERT, Toxic -BERT, BERT -Base,
